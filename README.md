@@ -92,6 +92,7 @@
 - Dashboard with twelve cards (tonight, free evenings, up next, free blocks, overlaps, find time and more), which you can reorder and set up
 - Search in title, place and notes
 - Import and export of .ics files, with repeats, time zones and reminders
+- A backup of your calendars, events, CalDAV accounts, link calendars and settings in one encrypted file (a password or a 6-digit PIN), to move to a new install; you choose what goes in, and a backup from another version restores as much as possible and lists what it could not take over
 - Calendars by link (.ics, https:// or webcal://, read only) and CalDAV accounts (Nextcloud, ownCloud, Radicale, Baikal, Synology, Fastmail, iCloud, Posteo or other), with changes in both directions
 - Background sync of followed calendars, with a choice of how often and an option for Wi-Fi only
 - App lock with your fingerprint, face or screen lock, screenshots off, and reminders hidden on the lock screen
@@ -128,6 +129,8 @@ Some features do nothing until you set them up:
 - A reminder shows the start time of the event, not the time you have to leave.
 - Android decides when background work runs, so a sync can be later than the time you chose; widgets are redrawn about every 15 minutes.
 - The Wi-Fi only option needs a connection that Android does not count as metered.
+- A backup cannot be opened without its password or PIN, and there is no way to recover a lost one. A PIN of 6 digits is weak: anyone with the file can try every combination, so use a password when the backup holds CalDAV passwords or link addresses.
+- A backup does not restore the app lock or the screenshot setting; those belong to the phone.
 - The interface is in English.
 - Release builds are not minified (R8 is off).
 
@@ -152,10 +155,10 @@ For a signed release, copy `keystore.properties.example` to `keystore.properties
 <h2 align="center" id="verify-a-release-apk">✅ Verify a release APK</h2>
 
 ```
-apksigner verify --print-certs calendar-v1.0.1.apk
+apksigner verify --print-certs calendar-v1.0.2.apk
 ```
 
-Check the file hash against `SHA256.txt` on the release page with `Get-FileHash calendar-v1.0.1.apk` (PowerShell) or `sha256sum calendar-v1.0.1.apk`. The signing certificate should be the same in every release.
+Check the file hash against `SHA256.txt` on the release page with `Get-FileHash calendar-v1.0.2.apk` (PowerShell) or `sha256sum calendar-v1.0.2.apk`. The signing certificate should be the same in every release.
 
 <h2 align="center">📄 License</h2>
 

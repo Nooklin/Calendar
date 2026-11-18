@@ -2,6 +2,10 @@
 
 All notable changes to Nooklin Calendar, newest first. Each GitHub release has its own notes: https://github.com/Nooklin/Calendar/releases
 
+## Version 1.0.2
+
+- Backup and restore (Settings > Import and export): one encrypted file (.nkb) with your calendars and events, CalDAV accounts with their password, link calendars and settings. You choose what goes in (all on by default) and protect it with a password (at least 8 characters) or a 6-digit PIN. A restore replaces the parts that are in the backup, after a confirmation, and a backup from another version is read as far as possible, with a list of what could not be taken over. The app lock and the screenshot setting are not restored.
+
 ## Version 1.0.1
 
 - App icon update: a new launcher icon in the Nooklin colors (yellow, terracotta, cocoa and cream), also as a single color icon for themed icons.

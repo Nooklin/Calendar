@@ -40,6 +40,7 @@ class CalendarRepository(context: Context) {
     private val caldavDao = db.caldavDao()
     private val caldav = CaldavSync(appContext, db)
     private val preferences = org.nooklin.calendar.data.local.AppPreferences(appContext)
+    private val backup = org.nooklin.calendar.data.backup.BackupManager(appContext, db, preferences)
 
     val calendars: Flow<List<CalendarEntity>> = calendarDao.observeAll()
 
@@ -375,6 +376,12 @@ class CalendarRepository(context: Context) {
         return calendar.name to text
     }
 
+
+    suspend fun createBackup(options: org.nooklin.calendar.data.backup.BackupOptions, secret: String) = backup.create(options, secret)
+
+    suspend fun openBackup(bytes: ByteArray, secret: String) = backup.open(bytes, secret)
+
+    suspend fun restoreBackup(parsed: org.nooklin.calendar.data.backup.ParsedBackup) = backup.restore(parsed)
 
     private companion object {
         const val PAD_DAYS = 2L

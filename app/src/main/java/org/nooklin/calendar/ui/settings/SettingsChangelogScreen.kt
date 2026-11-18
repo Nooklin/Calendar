@@ -24,6 +24,11 @@ import androidx.compose.ui.unit.dp
 private class ChangelogVersion(val version: String, val lines: List<String>)
 
 private val CHANGELOG = listOf(
+    ChangelogVersion("1.0.2", listOf(
+        "Backup and restore in Settings > Import and export: one encrypted file with your calendars, events, CalDAV accounts, link calendars and settings.",
+        "You choose what goes in and protect the file with a password or a 6-digit PIN.",
+        "A backup from another version is restored as far as possible, with a list of what could not be taken over."
+    )),
     ChangelogVersion("1.0.1", listOf(
         "App icon update: a new launcher icon in the Nooklin colors, also as a single color icon for themed icons."
     )),

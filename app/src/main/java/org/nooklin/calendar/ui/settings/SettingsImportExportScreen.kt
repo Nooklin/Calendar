@@ -12,6 +12,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Backup
+import androidx.compose.material.icons.filled.Restore
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -65,6 +67,8 @@ fun SettingsImportExportScreen(calendars: List<CalendarEntity>, viewModel: Calen
         }
     }
 
+    val backup = rememberBackupFlow(viewModel)
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -94,7 +98,17 @@ fun SettingsImportExportScreen(calendars: List<CalendarEntity>, viewModel: Calen
             SettingsGroup("Export", exportRows)
             SettingsNote("Choose a calendar to write it as an .ics file.")
             if (message.isNotEmpty()) SettingsNote(message)
+            Spacer(Modifier.height(8.dp))
+            SettingsGroup(
+                "Backup",
+                listOf(
+                    { SettingsActionRow("Create a backup", Icons.Filled.Backup) { backup.startBackup() } },
+                    { SettingsActionRow("Restore from a backup", Icons.Filled.Restore) { backup.startRestore() } }
+                )
+            )
+            SettingsNote("One encrypted file with your calendars, CalDAV accounts, link calendars and settings, to move to a new install.")
             Spacer(Modifier.height(16.dp))
         }
     }
+    BackupDialogs(backup)
 }

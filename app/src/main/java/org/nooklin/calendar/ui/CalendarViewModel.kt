@@ -248,6 +248,12 @@ class CalendarViewModel(application: Application) : AndroidViewModel(application
 
     suspend fun exportIcs(calendarId: Long): Pair<String, String>? = repository.exportIcs(calendarId)
 
+    suspend fun createBackup(options: org.nooklin.calendar.data.backup.BackupOptions, secret: String) = repository.createBackup(options, secret)
+
+    suspend fun openBackup(bytes: ByteArray, secret: String) = repository.openBackup(bytes, secret)
+
+    suspend fun restoreBackup(parsed: org.nooklin.calendar.data.backup.ParsedBackup) = repository.restoreBackup(parsed)
+
     // Set by a tap on a search result: the calendar screen opens this event
     var pendingOpen by mutableStateOf<Occurrence?>(null)
 

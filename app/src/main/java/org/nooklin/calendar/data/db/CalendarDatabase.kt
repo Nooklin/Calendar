@@ -163,6 +163,19 @@ interface CalendarDao {
 
     @Query("DELETE FROM calendars WHERE name LIKE 'Sample %'")
     suspend fun deleteSamples()
+
+    // For restoring a backup: the events go with the calendars (foreign key with cascade)
+    @Query("DELETE FROM calendars WHERE sourceUrl IS NULL AND accountId IS NULL")
+    suspend fun deleteOnPhone()
+
+    @Query("DELETE FROM calendars WHERE sourceUrl IS NOT NULL")
+    suspend fun deleteLinks()
+
+    @Query("DELETE FROM calendars WHERE accountId IS NOT NULL")
+    suspend fun deleteCaldav()
+
+    @Query("SELECT COUNT(*) FROM calendars WHERE sourceUrl IS NULL AND accountId IS NULL")
+    suspend fun countOnPhone(): Int
 }
 
 @Dao
@@ -229,6 +242,12 @@ interface EventDao {
 interface CaldavDao {
     @Insert
     suspend fun insertAccount(account: CaldavAccountEntity): Long
+
+    @Query("SELECT * FROM caldav_accounts ORDER BY id")
+    suspend fun accounts(): List<CaldavAccountEntity>
+
+    @Query("DELETE FROM caldav_accounts")
+    suspend fun deleteAllAccounts()
 
     @Query("SELECT * FROM caldav_accounts ORDER BY id")
     fun observeAccounts(): Flow<List<CaldavAccountEntity>>

@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import org.nooklin.calendar.data.dashboard.DashboardSettings
 
@@ -284,5 +285,27 @@ class AppPreferences(private val context: Context) {
 
     suspend fun setBackgroundSyncWifiOnly(value: Boolean) {
         context.appSettingsDataStore.edit { prefs -> prefs[BG_SYNC_WIFI_KEY] = value }
+    }
+
+    /** Every stored setting by name, for a backup. */
+    suspend fun readAll(): Map<String, Any> =
+        context.appSettingsDataStore.data.first().asMap().mapKeys { it.key.name }
+
+    /** Sets the given settings (Boolean, Int or String values) and removes the named ones, for restoring a backup. */
+    suspend fun writeAll(values: Map<String, Any>, remove: Set<String>) {
+        context.appSettingsDataStore.edit { prefs ->
+            values.forEach { (name, value) ->
+                when (value) {
+                    is Boolean -> prefs[booleanPreferencesKey(name)] = value
+                    is Int -> prefs[intPreferencesKey(name)] = value
+                    is String -> prefs[stringPreferencesKey(name)] = value
+                }
+            }
+            remove.forEach { name ->
+                prefs.remove(booleanPreferencesKey(name))
+                prefs.remove(intPreferencesKey(name))
+                prefs.remove(stringPreferencesKey(name))
+            }
+        }
     }
 }

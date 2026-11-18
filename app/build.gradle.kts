@@ -81,4 +81,6 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
+    // The JSON classes of Android are stubs in unit tests, so the tests of the backup use the real ones
+    testImplementation("org.json:json:20240303")
 }
