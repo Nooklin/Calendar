@@ -1,0 +1,8 @@
+<resources>
+    <color name="widget_bg">#FF1C1C1E</color>
+    <color name="widget_text">#FFFFFFFF</color>
+    <color name="widget_dim">#FF8E8E93</color>
+    <color name="widget_accent">#FF0A84FF</color>
+    <color name="widget_red">#FFEE6A66</color>
+    <color name="widget_line">#33FFFFFF</color>
+</resources>

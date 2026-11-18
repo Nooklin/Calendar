@@ -1,0 +1,30 @@
+# Gradle and build output
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration and secrets, never commit these
+local.properties
+keystore.properties
+*.keystore
+*.jks
+
+# IDE
+.idea/
+*.iml
+.kotlin/
+.cxx/
+.externalNativeBuild/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Captures and reports
+captures/
+*.hprof
+
+# Local release script and internal notes, kept on disk, not on GitHub
+release-calendar.ps1
+SCOPE.md
+ERRORS.md

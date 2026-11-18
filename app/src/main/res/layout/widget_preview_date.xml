@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+<TextView android:fontFamily="@font/inter_widget" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Thursday" android:textSize="14sp" android:textColor="@color/widget_accent" android:textStyle="bold" android:maxLines="1" android:ellipsize="end" /><TextView android:fontFamily="@font/inter_widget" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12" android:textSize="48sp" android:textColor="@color/widget_text" android:textStyle="bold" android:maxLines="1" android:ellipsize="end" /><TextView android:fontFamily="@font/inter_widget" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="November" android:textSize="14sp" android:textColor="@color/widget_dim" android:maxLines="1" android:ellipsize="end" />
+</LinearLayout>

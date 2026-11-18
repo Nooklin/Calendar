@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:orientation="horizontal"
+    android:padding="12dp">
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="6dp" android:orientation="vertical">
+        <TextView android:id="@+id/dy_head_left" android:fontFamily="@font/inter_widget" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/widget_red" android:maxLines="1" />
+        <LinearLayout android:id="@+id/dy_events_left" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+        <TextView android:id="@+id/dy_empty_left" android:fontFamily="@font/inter_widget" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No events" android:textSize="12sp" android:textColor="@color/widget_dim" android:visibility="gone" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="6dp" android:orientation="vertical">
+        <TextView android:id="@+id/dy_head_right" android:fontFamily="@font/inter_widget" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4dp" android:textSize="12sp" android:textStyle="bold" android:textColor="@color/widget_dim" android:maxLines="1" />
+        <LinearLayout android:id="@+id/dy_events_right" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+        <TextView android:id="@+id/dy_empty_right" android:fontFamily="@font/inter_widget" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No events" android:textSize="12sp" android:textColor="@color/widget_dim" android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

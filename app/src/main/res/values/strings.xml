@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Nooklin - Calendar</string>
+    <string name="widget_today_name">Calendar today</string>
+    <string name="widget_week_name">Calendar week</string>
+    <string name="widget_month_name">Calendar month</string>
+    <string name="widget_date_name">Calendar date</string>
+    <string name="widget_today_description">The events of today</string>
+    <string name="widget_week_description">The seven days of this week with a dot for each day that has events</string>
+    <string name="widget_month_description">This month with a dot for each day that has events</string>
+    <string name="widget_date_description">The date of today</string>
+    <string name="widget_upnext_small_name">Calendar up next (small)</string>
+    <string name="widget_upnext_medium_name">Calendar up next (wide)</string>
+    <string name="widget_days_name">Calendar today and tomorrow</string>
+    <string name="widget_plan_name">Calendar day planner</string>
+    <string name="widget_list_name">Calendar list</string>
+    <string name="widget_upnext_small_description">The date and your next events</string>
+    <string name="widget_upnext_medium_description">The date with the all day events, and your next events with place and time</string>
+    <string name="widget_days_description">Your events of today on the left and of tomorrow on the right</string>
+    <string name="widget_plan_description">The hours of today and tomorrow with your events on them</string>
+    <string name="widget_list_description">A compact list of your upcoming events, day by day</string>
+    <string name="tile_quick_add">Quick add</string>
+</resources>
