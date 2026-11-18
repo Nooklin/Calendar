@@ -152,10 +152,10 @@ For a signed release, copy `keystore.properties.example` to `keystore.properties
 <h2 align="center" id="verify-a-release-apk">✅ Verify a release APK</h2>
 
 ```
-apksigner verify --print-certs calendar-v1.0.0.apk
+apksigner verify --print-certs calendar-v1.0.1.apk
 ```
 
-Check the file hash against `SHA256.txt` on the release page with `Get-FileHash calendar-v1.0.0.apk` (PowerShell) or `sha256sum calendar-v1.0.0.apk`. The signing certificate should be the same in every release.
+Check the file hash against `SHA256.txt` on the release page with `Get-FileHash calendar-v1.0.1.apk` (PowerShell) or `sha256sum calendar-v1.0.1.apk`. The signing certificate should be the same in every release.
 
 <h2 align="center">📄 License</h2>
 

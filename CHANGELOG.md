@@ -2,6 +2,10 @@
 
 All notable changes to Nooklin Calendar, newest first. Each GitHub release has its own notes: https://github.com/Nooklin/Calendar/releases
 
+## Version 1.0.1
+
+- App icon update: a new launcher icon in the Nooklin colors (yellow, terracotta, cocoa and cream), also as a single color icon for themed icons.
+
 ## Version 1.0.0
 
 - First release version. The look follows Nooklin Photos: the settings with a heading above every group, one short line of explanation under it and choices in a list, About with Changelog, GitHub, Privacy and Terms, shared design tokens, a calmer dark glass (90 percent for the cards in black mode), the same empty state in the lists (a short text and a New event button), everything you tap is at least 48 dp, and a setting for vibration feedback (Settings > Appearance, on by default) on the time wheels, the view menu and the switches, and the Developer screen is removed.

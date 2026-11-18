@@ -24,6 +24,9 @@ import androidx.compose.ui.unit.dp
 private class ChangelogVersion(val version: String, val lines: List<String>)
 
 private val CHANGELOG = listOf(
+    ChangelogVersion("1.0.1", listOf(
+        "App icon update: a new launcher icon in the Nooklin colors, also as a single color icon for themed icons."
+    )),
     ChangelogVersion("1.0.0", listOf(
         "The settings look like those of Nooklin Photos: a heading above every group and one short line of explanation under it.",
         "Week starts on, Theme, Font, Lock again and How often are a row with the choice on the right.",
